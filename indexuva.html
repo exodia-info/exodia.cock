@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <script defer src="scriptuva.js"></script>
+  <title>Test: che uva sei?</title>
+  <link href="testuva.css" rel="stylesheet">
+  <a  class="logo" href="index.html"><input type="image" id="myimage" class="loghino" src="logo2.png" /></a></head>
+
+<body>
+
+  <div class="container">
+    <div id="titolo" class="titolo big-text">Test: Che uva sei?</div>
+    <div id="risultato" class="risultato med-text hide">sus</div>
+    <div id="question-container" class="question-container hide">
+      <div id="question" class="question med-text">Question</div>
+      <div id="answer-buttons" class="">
+        <button class="btn" id="1" onclick="click()">Answer 1</button>
+        <button class="btn" id="2" onclick="click()">Answer 2</button>
+        <button class="btn" id="3" onclick="click()">Answer 3</button>
+        <button class="btn" id="4" onclick="click()">Answer 4</button>
+      </div>
+    </div>
+    <div class="controls">
+      <button type="submit" id="riprova-btn" onClick="refreshPage()" class="riprova-btn btn hide">Riprova</button>
+      <button id="start-btn" class="start-btn btn">Start</button>
+      <button id="next-btn" class="next-btn btn hide">Next</button>
+      <button type="submit" id="restart-btn"  onClick="refreshPage()" class="restart-btn btn hide" ><input type="image" id="myimage" style="height:28px; width:28px;" src="restartuva.png" /></button>
+  </div>
+</body>
+</html>

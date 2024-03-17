@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tris</title>
+    <link rel="stylesheet" href="tris.css">
+</head>
+<body>
+    <a class="exodia" href="index.html">
+        <div class="e">E</div>
+        <div class="ex"></div>
+        <div class="ox"></div>
+        <div class="dia">DIA</div>
+    </a>
+
+    <div class="board o">
+        <div class="cell" id="cell"></div>
+        <div class="cell" id="cell2"></div>
+        <div class="cell" id="cell3"></div>
+        <div class="cell" id="cell4"></div>
+        <div class="cell" id="cell5"></div>
+        <div class="cell" id="cell6"></div>
+        <div class="cell" id="cell7"></div>
+        <div class="cell" id="cell8"></div>
+        <div class="cell" id="cell9"></div>
+    </div>
+
+    <div class="comandi">
+        <button class="meno" onclick="meno()">-</button>
+        <div class="dimensioni">Dimensioni Tabellone</div>
+        <button class="piu" onclick="piu()">+</button>
+    </div>
+    <div class="end">
+        <div class="msg">Pareggio!</div>
+        <button class="restart" onclick="refreshPage()">Riprova</button>
+    </div>
+</body>
+<script>
+
+let turnoO
+const board = document.querySelector('.board')
+const cells = document.querySelectorAll('.cell')
+let msg = document.querySelector('.msg')
+const end = document.querySelector('.end')
+const WIN = [
+        [0, 1, 2], [3, 4, 5], [6, 7, 8],
+        [0, 3, 6], [1, 4, 7], [2, 5, 8], 
+        [0, 4, 8], [2, 4, 6]
+    ]
+cells.forEach(cell => {
+        cell.addEventListener('click', clicca, {once: true})
+})
+
+let i = 100;
+let j = 0;
+
+function refreshPage(){
+    window.location.reload()
+}
+
+
+function meno(){
+i = i-10;
+
+if(i<=30 || i>=180)    i=i+10
+
+document.getElementById('cell').style.setProperty("--cell-size", `${i}px`);
+document.getElementById('cell2').style.setProperty("--cell-size", `${i}px`);
+document.getElementById('cell3').style.setProperty("--cell-size", `${i}px`);
+document.getElementById('cell4').style.setProperty("--cell-size", `${i}px`);
+document.getElementById('cell5').style.setProperty("--cell-size", `${i}px`);
+document.getElementById('cell6').style.setProperty("--cell-size", `${i}px`);
+document.getElementById('cell7').style.setProperty("--cell-size", `${i}px`);
+document.getElementById('cell8').style.setProperty("--cell-size", `${i}px`);
+document.getElementById('cell9').style.setProperty("--cell-size", `${i}px`);
+}
+
+function piu(){
+i = i+10;
+
+if(i<=30 || i>=180)    i=i-10
+
+
+document.getElementById('cell').style.setProperty("--cell-size", `${i}px`);
+document.getElementById('cell2').style.setProperty("--cell-size", `${i}px`);
+document.getElementById('cell3').style.setProperty("--cell-size", `${i}px`);
+document.getElementById('cell4').style.setProperty("--cell-size", `${i}px`);
+document.getElementById('cell5').style.setProperty("--cell-size", `${i}px`);
+document.getElementById('cell6').style.setProperty("--cell-size", `${i}px`);
+document.getElementById('cell7').style.setProperty("--cell-size", `${i}px`);
+document.getElementById('cell8').style.setProperty("--cell-size", `${i}px`);
+document.getElementById('cell9').style.setProperty("--cell-size", `${i}px`);
+}
+
+function clicca(e){
+    const cell = e.target
+    const turno = turnoO ? 'x' : 'o'
+    j++;
+    scrivi(cell, turno)
+    if(vittoria(turno)){
+        msg.innerHTML = `La ${turnoO ? "X" : "O"} vince!`
+        console.log(j)
+        end.classList.add('on')
+    }else if(j==9){
+        end.classList.add('on')
+    }
+    hover()
+    cambiaturno()
+    console.log(e.target)
+}
+
+
+
+function scrivi(cell, turno){
+    cell.classList.add(turno)
+}
+
+function cambiaturno(){
+    turnoO = !turnoO
+}
+
+function hover(){
+board.classList.remove('x')
+board.classList.remove('o')
+if (turnoO){
+    board.classList.add('o')
+}else{
+    board.classList.add('x')
+}
+}
+
+function vittoria(turno){
+    return WIN.some(combinazione => {
+        return combinazione.every(index => {
+            return cells[index].classList.contains(turno); console.log(cells[index])
+        })
+    })      
+}
+</script>
+</html>

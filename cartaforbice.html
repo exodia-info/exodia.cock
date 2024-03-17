@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta Formbice Indice</title>
+
+    <link rel="stylesheet" href="style.css">
+    <a  class="logo" href="index.html"><input type="image" id="myimage" class="loghino"  src="logo.png" /></a>
+</head>
+
+<body>
+  <div class="container">
+    <h1 id="titolo" class="big-text">Carta Forbice Sasso</h1>
+    <h2 id="testo" class="med-text"></h2>
+    <h3>
+        <button class="c" id="carta" onclick="carta()"><input type="image" id="myimage" style="height:28px; width:28px;" src="carta.png" /></button>
+        <button class="f" id="forbice" onclick="forbice()"><input type="image" id="myimage" style="height:28px; width:40px;" src="forbice.png" /></button>        
+        <button class="s" id="sasso" onclick="sasso()"><input type="image" id="myimage" style="height:35px; width:35px;" src="sasso.jpg" /></button>
+    </h3>
+
+    <h4>
+        <button id="conferma" class="med-text" onclick="verdetto()">
+            conferma
+        </button>
+        <button id="riprova" class="med-text hide" onclick="riprova()">
+            riprova
+        </button>
+    </h4>
+
+    <div class="punteggio">
+      <p class="p1">Punteggio tuo: 0</p>
+      <p class="p2">Punteggio Computer: 0</p>
+    </div>
+  </div>
+ 
+    
+    <script>
+
+let nome = window.prompt("Inserisci il tuo nome:");
+
+        document.getElementById("testo").innerHTML = "fai la tua scelta, " + nome;
+        document.querySelector('.p1').innerHTML = `Punteggio ${nome}: 0`
+
+      let scelta;
+      let computer;
+
+      function carta(){
+          scelta = "carta";
+          console.log(scelta);
+
+          valore=1;
+          console.log(valore);
+          document.getElementById("carta").style.backgroundColor = 'rgb(107, 136, 155)';
+          document.getElementById("forbice").style.backgroundColor = 'rgb(123, 171, 204)';
+          document.getElementById("sasso").style.backgroundColor = 'rgb(123, 171, 204)';
+      }
+      function forbice(){
+          scelta = "forbice";
+          valore=2;
+          console.log(valore);
+         console.log(scelta)
+         document.getElementById("carta").style.backgroundColor = 'rgb(123, 171, 204)';
+          document.getElementById("forbice").style.backgroundColor = 'rgb(107, 136, 155)';
+          document.getElementById("sasso").style.backgroundColor = 'rgb(123, 171, 204)';
+      }
+
+      function sasso(){
+          scelta = "sasso";
+          valore=3;
+          console.log(valore);
+          console.log(scelta)
+          document.getElementById("carta").style.backgroundColor = 'rgb(123, 171, 204)';
+          document.getElementById("forbice").style.backgroundColor = 'rgb(123, 171, 204)';
+          document.getElementById("sasso").style.backgroundColor = 'rgb(107, 136, 155)';
+      }
+
+      let punteggio = 0, punteggioC = 0
+
+      function verdetto(){
+        document.getElementById("carta").classList.add('hide')
+        document.getElementById("forbice").classList.add('hide')
+        document.getElementById("sasso").classList.add('hide')
+        document.getElementById("conferma").classList.add('hide')
+        document.getElementById("riprova").classList.remove('hide')
+
+          valore2 = Math.round(Math.random()*3);
+          
+          if(valore2 == 0){
+              console.log("è ancora 0")
+              valore2 = 1;
+          }else{
+              console.log("tutto a posto");
+          }
+
+          console.log(valore2);
+          if(valore == 1 && valore2 == 1){
+              document.getElementById("testo").innerHTML = nome + ", hai selezionato " + scelta + "\n e il compuer ha selezionato carta. \nLa partita è finita in pareggio."
+              document.getElementById("titolo").innerHTML = "Pareggio" 
+              document.getElementById("titolo").style.color = "blue" 
+              console.log("pareggio")
+          }else if(valore == 1 && valore2 == 2){
+            document.getElementById("testo").innerHTML = nome + ", hai selezionato " + scelta + "\n e il compuer ha selezionato forbice. \nHai perso la partita."
+              document.getElementById("titolo").innerHTML = "Sconfitta" 
+              document.getElementById("titolo").style.color = "red"
+              punteggioC++
+              console.log("hai perso")
+          }else if(valore == 1 && valore2 == 3){
+            document.getElementById("testo").innerHTML = nome + ", hai selezionato " + scelta + "\n e il compuer ha selezionato sasso. \nHai vinto la partita."
+              document.getElementById("titolo").innerHTML = "Vittoria" 
+              document.getElementById("titolo").style.color = "green" 
+              punteggio++
+              console.log("hai vinto")
+          }else if(valore == 2 && valore2 == 1){
+            document.getElementById("testo").innerHTML = nome + ", hai selezionato " + scelta + "\n e il compuer ha selezionato carta. \nHai vinto la partita."
+              document.getElementById("titolo").innerHTML = "Vittoria" 
+              document.getElementById("titolo").style.color = "green" 
+              punteggio++
+              console.log("hai vinto")
+          }else if(valore == 2 && valore2 == 2){
+            document.getElementById("testo").innerHTML = nome + ", hai selezionato " + scelta + "\n e il compuer ha selezionato forbice. \nLa partita è finita in pareggio."
+              document.getElementById("titolo").innerHTML = "Pareggio" 
+              document.getElementById("titolo").style.color = "blue" 
+              console.log("pareggio")
+          }else if(valore == 2 && valore2 == 3){
+            document.getElementById("testo").innerHTML = nome + ", hai selezionato " + scelta + "\n e il compuer ha selezionato sasso. \nHai perso la partita."
+              document.getElementById("titolo").innerHTML = "Sconfitta" 
+              document.getElementById("titolo").style.color = "red" 
+              punteggioC++
+              console.log("hai perso")
+          }else if(valore == 3 && valore2 == 1){
+            document.getElementById("testo").innerHTML = nome + ", hai selezionato " + scelta + "\n e il compuer ha selezionato carta. \nHai perso la partita."
+              document.getElementById("titolo").innerHTML = "Sconfitta" 
+              document.getElementById("titolo").style.color = "red" 
+              punteggioC++
+              console.log("hai perso")
+          }else if(valore == 3 && valore2 == 2){
+            document.getElementById("testo").innerHTML = nome + ", hai selezionato " + scelta + "\n e il compuer ha selezionato forbice. \nHai vinto la partita."
+              document.getElementById("titolo").innerHTML = "Vittoria" 
+              document.getElementById("titolo").style.color = "green" 
+              punteggio++
+              console.log("hai vinto")
+          }else if(valore == 3 && valore2 == 3){
+            document.getElementById("testo").innerHTML = nome + ", hai selezionato " + scelta + "\n e il compuer ha selezionato sasso. \nLa partita è finita in pareggio."
+              document.getElementById("titolo").innerHTML = "Pareggio" 
+              document.getElementById("titolo").style.color = "blue" 
+              console.log("pareggio")
+          }
+          document.querySelector('.p1').innerHTML = `Punteggio ${nome}: ${punteggio}`
+          document.querySelector('.p2').innerHTML = `Punteggio Computer: ${punteggioC}`
+      }
+
+    function riprova(){
+document.getElementById("titolo").innerHTML = "Carta Forbice Sasso"
+document.getElementById("testo").innerHTML = "fai la tua scelta, " + nome;
+document.getElementById("carta").classList.remove('hide')
+document.getElementById("forbice").classList.remove('hide')
+document.getElementById("sasso").classList.remove('hide')
+document.getElementById("conferma").classList.remove('hide')
+document.getElementById("riprova").classList.add('hide')
+//window.location.reload();
+document.getElementById("carta").style.backgroundColor = 'rgb(123, 171, 204)';
+document.getElementById("forbice").style.backgroundColor = 'rgb(123, 171, 204)';
+document.getElementById("sasso").style.backgroundColor = 'rgb(123, 171, 204)';
+document.getElementById("titolo").style.color = "black" 
+    }
+
+    </script>
+</body>
+</html>

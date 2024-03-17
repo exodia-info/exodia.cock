@@ -1,0 +1,83 @@
+body{
+    background: url('sfondo.png') no-repeat center center;
+    background-size: cover;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.hide{display: none;}
+.nascondi{background: none; border: none; opacity: 0;}
+
+.exodia{
+position: absolute;
+top: 0%;
+left: 0%;
+height: 80px;
+width: 80px;
+cursor: pointer
+}
+
+.container{
+    width: 500px;
+    max-width: 90%;
+    background-color: rgb(218, 165, 32);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 6px 5px rgba(0,0,0,0.79);
+}
+
+h1{color: rgb(145, 45, 238); background-color: rgb(232, 195, 101); padding: 10px; border-radius: 5px;}
+h2{font-size: 20px; padding: 10px;}
+h3{font-size: 18px; padding: 0px; margin-bottom: 10px;}
+
+h1.attenzione{
+    background-color: red;
+    color: black;
+    box-shadow: 1px 1px 6px 5px rgba(0,0,0,0.79);
+    transition: all 1s cubic-bezier(.215, .61, .355, 1);
+}
+
+.cerca{
+    display: flex;
+    align-items: center;
+}
+.sound{
+    display: flex;
+    width: 60%;
+    align-items: center;
+    justify-content: center;
+}
+
+.start, .btn{font-size: x-large; font-family: 'Times New Roman', Times, serif;
+border-radius: 5px;
+background-color: rgb(145, 45, 238);
+color: white;
+cursor: pointer;
+}
+
+.start{width: 120px; height: 60px; min-width: fit-content;}
+
+.btn{
+    font-size: medium; padding: 5px;
+    height: 35px;
+    width: 70px;
+    min-width:fit-content;
+}
+
+.start:hover, .btn:hover{background-color: rgb(104, 44, 160);}
+
+.difficolta, .modalita{display: flex; align-items: center; justify-content: space-evenly; background-color: rgb(232, 195, 101);
+border-radius: 5px;
+margin-top: 25px;
+}
+
+.viola{background-color: rgb(84, 42, 123); border: 2px solid white}
+
+.disabled{background-color: gray; cursor: not-allowed;}
+.disabled:hover{background-color: gray;}

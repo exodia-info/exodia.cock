@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2048</title>
+    <link rel="stylesheet" href="1024.css">
+    <script src="1024.js"></script>
+</head>
+<body>
+    
+    <div>
+        <div id="head">
+            <h1>2048</h1>
+            <hr>
+            <h2>score: <span id="score">0</span></h2>
+        </div>
+        <div id="board">
+            <div class="win hide">Hai Vinto!
+                <div class="bottoni">
+                    <button class="riprova" onclick="window.location.reload()">Gioca Ancora</button>
+                    <button class="continua">Continua a Giocare</button>
+                </div>
+            </div>
+            <div class="lost hide">Game Over
+                <button class="riprova" onclick="window.location.reload()">Gioca Ancora</button>
+            </div>
+        </div>
+        <div class="modalita">
+            <h2>Modalità: </h2>
+            <button class="x2 mod alita" id="x2">Multipli di 2</button>
+            <button class="x3 mod" id="x3">Multipli di 3</button>
+            <button class="x5 mod" id="x5">Multipli di 5</button>
+        </div>
+    </div>
+
+
+</body>
+</html>

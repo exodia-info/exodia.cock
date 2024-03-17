@@ -1,0 +1,142 @@
+*, *::before, *::after{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: ghostwhite;
+}
+
+hr{
+    --board: 400px;
+    width: var(--board);
+}
+
+#head{
+    height: 20vh;
+}
+
+.lost{
+    --board: 410px;
+    background: linear-gradient(0deg, rgba(0,0,0,0.4), rgba(255,255, 255,.8));
+    position: absolute;
+    transform: translateX(-5px) translateY(-5px);
+    width: var(--board);
+    height: var(--board);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: 790;
+    color: rgb(220, 0, 0);
+}
+
+.win{
+    --board: 410px;
+    background: linear-gradient(0deg, rgba(255,255,0,0.6), rgba(255,255, 255,.8));
+    position: absolute;
+    transform: translateX(-5px) translateY(-5px);
+    width: var(--board);
+    height: var(--board);
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    font-weight: 790;
+    color: rgb(0, 0, 0);
+}
+
+button{
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: 600;
+    height: 40px;
+    width: 150px;
+    border-radius: 14px;
+    border: none;
+    background-color: #ddd;
+    transition: 100ms ease-in-out;
+}
+
+.continua{
+    font-size: 14px;
+}
+
+button:hover{
+    background-color: #bbb;
+}
+
+.modalita{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.mod{
+    font-size: 14px;
+    width: fit-content;
+    padding: 10px;
+    margin: 0;
+    font-weight: 500;
+}
+
+.alita{
+    background-color: burlywood;
+}
+
+.alita:hover{
+    background-color: rgb(203, 158, 99);
+}
+
+#board{
+    --bordo: 5px;
+    --board: 400px;
+    display: flex;
+    flex-wrap: wrap;
+    width: var(--board);
+    height: var(--board);
+    background-color: burlywood;
+    border: var(--bordo) solid burlywood;
+    border-radius: 8px;
+}
+
+.cell{
+    --cell: 90px;
+    --bordo: 5px;
+    width: var(--cell);
+    height: var(--cell);
+    margin: var(--bordo);
+    background-color: antiquewhite;
+    background-color: hsl(var(--colore), 100%, var(--luminosita));
+    color: hsl(70, 25%, var(--testo));
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.tasto{
+    animation: show 100ms ease-in-out;
+    transition: 100ms ease-in-out;
+}
+
+@keyframes show{
+    0%{
+        opacity: .5;
+        transform: scale(0);
+    }
+}
+
+.hide{
+    display: none;
+}
+

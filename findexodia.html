@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find exodia</title>
+    <link rel="stylesheet" href="find.css">
+    <script src="findV2.js"></script>
+</head>
+<body onclick="suono(); suono2(); suono3()" id="body">
+    <div class="container" id="container">
+        <h1 id="titolo">Exodia è scomparso, riesci a trovarlo?</h1>
+        <h2 id="testo">Clicca in giro e ascoltalo miagolare per capire dove si nasconde</h2>
+        <div class="cerca">
+            <button class="start" onclick="start()" id="start" >Cerca</button>
+            <div class="sound">
+                 <img src="speacker.png" alt="" style="width: 50px; height: 50px;"><h2>Sound on</h2>
+            </div>
+        </div>
+
+        
+        <div class="modalita">
+            <h3>Modalità:</h3>
+            <button id="classica" class="classica viola btn" onclick="classica()">Classica</button>
+            <button id="colori" class="colori btn" onclick="colori()">Colori</button>
+            <button id="bw" class="bw btn" onclick="bw()">Black & White</button>
+        </div>
+        <div class="difficolta">
+            <h3 title="usa questa funzione per modificare le dimensioni di Exodia">Difficoltà:</h3>
+            <button title="160px" id="facile" class="facile btn" onclick="facile()">Facile</button>
+            <button title="120px" id="normale" class="normale btn" onclick="normale()" >Media</button>
+            <button title="80px" id="difficile" class="difficile viola btn" onclick="difficile()">Difficile</button>
+            <button title="80px e il cursore non cambierà quando sarà sopra Exodia" id="esperto" class="esperto btn disabled" onclick="esperto()">Esperto</button>
+        </div>
+    </div>
+
+    <h1 class="attenzione hide" id="attenzione">Attenzione! Exodia si è spostato!</h1>
+
+    <input onclick="trovato()" type="image" class="exodia hide" id="exodia" src="exodia.png" />
+</body>
+</html>

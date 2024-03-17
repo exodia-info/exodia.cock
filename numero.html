@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indovina il numero</title>
+    <link rel="stylesheet" href="numero.css">
+    <a  class="logo" href="index.html"><input type="image" id="myimage" class="loghino" src="logo.png" /></a>
+</head>
+<body>
+    
+    <div class="tir">
+        <div class="container">
+            <h1 id="title">Sto pensando a un numero...</h1>
+            <span id="domanda" class="domanda">Prova ad indovinarlo </span><input type="text" id="input" class="input" value="" >
+    
+            <div class="bottom">
+                <button id="btn" class="btn" onclick="indovina()">invia</button>
+                <button id="reload" onclick="window.location.reload();" class="btn hide">Gioca Ancora</button>
+                <h3 id="tentativi">Numero di tentativi: nessuno</h3>
+            </div>
+        </div>
+        <div class="risposta">
+            <p id="p1" class="hide">❝</p>
+            <h2 id="risposta"></h2>
+            <p id="p2" class="p2 hide">❞</p>
+        </div>
+
+    </div>
+
+</body>
+
+<script>
+    
+    let min = 1;
+    let max = 101;
+    let rand = Math.floor((max-min)*Math.random() + min)
+    let ntentativi = 0
+
+    let input = document.getElementById("input")
+
+    input.addEventListener('keyup', (e) => {
+        if (e.keyCode === 13){
+            indovina();
+        }
+    });
+
+
+    function indovina(){
+        let valore = parseInt(document.getElementById("input").value)
+        let risposta = document.getElementById("risposta")
+        let tentativi = document.getElementById("tentativi")
+        document.getElementById("p1").classList.remove("hide")
+        document.getElementById("p2").classList.remove("hide")
+
+        
+        if(valore <= 0){
+          risposta.innerHTML = "attenzione, il numero è maggiore di zero"
+        }
+        else if(valore < rand && risposta.innerHTML != "troppo basso!" && risposta.innerHTML != "ancora troppo basso..." && risposta.innerHTML != "ancora troppo basso...."){
+            risposta.innerHTML = "troppo basso!"
+        }
+        else if (valore < rand && risposta.innerHTML == "troppo basso!"){
+                risposta.innerHTML = "ancora troppo basso..."
+            }
+            else if (valore < rand && risposta.innerHTML == "ancora troppo basso..."){
+                risposta.innerHTML = "ancora troppo basso...."
+            }
+            else if (valore < rand && risposta.innerHTML == "ancora troppo basso...."){
+                risposta.innerHTML = "ancora troppo basso..."
+            }
+        else if(valore > rand && valore <= 100 && risposta.innerHTML != "un po' più piccolo" && risposta.innerHTML != "ancora più piccolo..." && risposta.innerHTML != "ancora più piccolo...."){
+            risposta.innerHTML = "un po' più piccolo"
+        }
+        else if(valore > rand && valore <= 100 && risposta.innerHTML == "un po' più piccolo"){
+            risposta.innerHTML = "ancora più piccolo..."
+        }
+        else if(valore > rand && valore <= 100 && risposta.innerHTML == "ancora più piccolo..."){
+            risposta.innerHTML = "ancora più piccolo...."
+        }
+        else if(valore > rand && valore <= 100 && risposta.innerHTML == "ancora più piccolo...."){
+            risposta.innerHTML = "ancora più piccolo..."
+        }
+        else if(valore == rand){
+           risposta.innerHTML = "Esatto!"
+           document.getElementById("reload").style.backgroundColor = "rgb(48, 120, 236)"
+        document.getElementById("reload").style.fontWeight = 900
+        risposta.style.color = "green"
+        document.getElementById("domanda").innerHTML = `Stavo pensando al numero ${rand}`
+        document.getElementById("title").innerHTML = "Complimenti!"        
+
+            document.getElementById("reload").classList.remove("hide")
+            document.getElementById("btn").classList.add("hide")
+            document.getElementById("input").classList.add("hide")
+        }
+        else if(valore > 100){
+            risposta.innerHTML = "attenzione, il numero è minore di 100"
+        }
+        else{
+            risposta.innerHTML = "devi inserire un numero"
+        }
+        ntentativi++
+        console.log(ntentativi)
+
+        tentativi.innerHTML = `Numero di tentativi: ${ntentativi}`
+}
+
+
+</script>
+</html>

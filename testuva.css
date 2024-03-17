@@ -1,0 +1,141 @@
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: cursive;
+}
+
+.big-text{font-size: 55px; font-weight: 900;}
+.med-text{font-size: 40px;}
+.normal-text{font-size: 30px;}
+.small-text{font-size: 200px;}
+
+:root {
+  --hue-neutral: 300;
+  --hue-hover:145;
+}
+
+.logo{
+  width: 100vw;
+  position:fixed;
+  align-self: baseline;
+  justify-items:start;
+  margin-top: 20px;
+  }
+
+  .loghino{
+    height: 80px; width: 240px; margin-left: 20px;
+  }
+
+
+body {
+  --hue: var(--hue-neutral);
+  padding: 0;
+  margin: 0;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-color: hsl(var(--hue), 100%, 20%);
+}
+
+
+
+.container {
+  width: 800px;
+  max-width: 80%;
+  background-color: white;
+  border-radius: 6px;
+  padding: 10px;
+  box-shadow: 0 0 10px 2px;
+}
+
+.titolo{
+  font-weight: bolder;
+  text-align: center;
+  margin: 30px 30px;
+  font-family: serif;
+  color: purple;
+}
+
+.question{
+margin: 40px 0;
+transform: translateY(-20px);
+text-align: center;
+}
+
+.question-container{
+  padding: 30px 30px;
+  border-radius: 5px;
+  background-color: #efefef;
+    box-shadow: 0 0 1px 1px;
+}
+
+.risultato{
+  padding: 40px 40px;
+  margin: 40px;
+}
+
+.btn{
+  display: block;
+  margin: 20px 0;
+}
+
+.btn {
+  --hue: var(--hue-neutral);
+  border: 3px solid hsl(var(--hue), 100%, 30%);
+  background-color: hsl(var(--hue), 100%, 50%);
+  border-radius: 6px;
+  padding: 10px 24px;
+  color: white;
+  outline: none;
+  font-size: 20px;
+}
+
+.btn:hover {
+  --hue: var(--hue-hover);
+  border-color: black;
+}
+
+
+
+.start-btn, .next-btn, .riprova-btn{
+  font-size: 1.5rem;
+  font-weight: bold;
+  padding: 25px 50px;
+}
+
+ .restart-btn {
+   position: absolute;
+   transform: translateX(320px);
+padding: 25px 25px;
+border-radius: 400px;
+ }
+
+.controls {
+  grid-gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hide {
+  display: none;
+}
+
+@media(max-width: 768px){
+  *, *::before, *::after {
+    font-family:'Times New Roman', Times, serif;
+  }
+  .container{margin-top: 60px;}
+  .question-container{padding: 30px 20px;}
+  .loghino{height: 40px; width: 120px; margin-left: 20px;}
+  .big-text{font-size: 29px;}
+  .med-text{font-size: 22px;}
+  .titolo{margin: 15px 0px;}
+  .btn{padding: 10px 5px; margin: 10px 0; font-size: 16px; min-width: 100px;}
+  .start-btn, .next-btn, .riprova-btn{padding: 15px 50px; font-size: medium;}
+  .question{margin: 0;}
+  .risultato{font-size: 18px; padding: 25px 20px; margin: 0;}
+  .restart-btn{display: none;}
+}

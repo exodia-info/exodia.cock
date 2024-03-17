@@ -1,0 +1,391 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+  }
+
+.big-text{font-size: 70px; font-weight: 900;}
+.med-text{font-size: 40px;}
+.normal-text{font-size: 30px;}
+.small-text{font-size: 14px;}
+
+
+.hide{
+    display: none;
+}
+
+body{
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+} 
+
+
+
+.title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 1s cubic-bezier(.215, .61, .355, 1);
+}
+
+.logo{
+    height:100px; width: 300px; margin-right: 20px; margin-top: 50px; margin-bottom: 40px;
+    transition: all 0.4s cubic-bezier(.215, .61, .355, 1);
+}
+
+.header{
+    position: fixed;
+    margin-top: -30vh;
+    width: 100%;
+    display: grid;
+    justify-content: center;
+    background-color: rgb(218, 165, 32);  
+    box-shadow:  1px 7px 23px 5px rgb(0, 0, 0);
+    z-index: 100;
+    transition: all 1s cubic-bezier(.215, .61, .355, 1);
+}
+
+.home{
+    background: linear-gradient(0deg, rgba(0,0,0,.7), rgba(0,0,0,0.15)),
+    url('exodia5.jpg') no-repeat center center;
+    background-size: cover;
+    width: 100%;
+    height: 70vh;
+    margin-top: 30vh;
+    }   
+
+
+.btn{
+    justify-self: center;
+}
+
+
+h1{
+    margin-top: 40px;
+    margin-bottom: 30px;
+    font-size: 70px;
+    font-weight: 900;
+    display: flex;
+    color: rgb(145, 45, 238);
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.clock{ 
+    display:inline-block;
+    left: 80%;
+    top: 15vh;
+    color: black;
+    width: 250px;
+    height: 250px;
+    background-image: url(exodia.jpeg);
+    background-size: cover;
+    border-radius: 50%;
+    border: groove gold thick;
+    position: relative;
+}
+
+.clock .number{
+    --rotation: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;  
+    text-align: center;
+    transform: rotate(var(--rotation));
+    font-size: 2rem;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    text-shadow: -2px 0 rgb(0, 0, 0), 0 2px #000, 2px 0 #000, 0 -2px #000;
+}
+
+.clock .number1{ --rotation: 30deg}
+.clock .number2{ --rotation: 60deg}
+.clock .number3{ --rotation: 90deg}
+.clock .number4{ --rotation: 120deg}
+.clock .number5{ --rotation: 150deg}
+.clock .number6{ --rotation: 180deg}
+.clock .number7{ --rotation: 210deg}
+.clock .number8{ --rotation: 240deg}
+.clock .number9{ --rotation: 270deg}
+.clock .number10{ --rotation: 300deg}
+.clock .number11{ --rotation: 330deg}
+
+.clock .lancetta{
+    --rotation:0;
+    position: absolute;
+    transform-origin: bottom;
+    bottom: 50%;
+    left: 50%;
+    width: 10px;
+    height: 40%;
+    transform: translateX(-50%) rotate(calc(var(--rotation)*1deg));
+    background-color: black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    z-index: 10;
+}
+
+.clock::after{
+    content: "";
+    position: absolute;
+    background-color: black;
+    z-index: 11;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    left: 50%;
+    bottom: 50%;
+    transform: translate(-50%, 50%);
+    
+}
+
+.clock .lancetta.secondi{
+background-color: red;
+height: 50%;
+width: 2px;
+}
+
+.clock .lancetta.minuti{
+    background-color: black;
+    height: 43%;
+    width: 4px;
+    }
+
+.clock .lancetta.ore{
+background-color: black;
+height: 35%;
+width: 8px;
+}
+
+
+.btn, .btnn {
+    display: flex;
+    justify-content: center;
+   height: 50px;
+   border-radius: 15px;
+   color: rgb(145, 45, 238);
+   cursor: pointer;
+   transition: all 0.2s ease-in-out;
+   outline: none;
+   font-size: 30px;
+}
+
+.btn:hover, .btnn:hover{
+    transform: scale(1.05);
+}
+
+.btn:active, .btnn:active{
+    background-color: rgb(255, 255, 255);
+}
+
+.cartaforbice{
+    margin-top: 100px;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+}
+
+.cfs_img{
+    height: 100%;
+    width: 65%;
+}
+.cfs_img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.cfs_content{
+    padding: 50px;
+    width: 35%;
+}
+
+p{
+    margin-bottom: 30px;
+}
+
+.numero{
+    margin-top: 100px;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+}
+
+.numero_img{
+    height: 100%;
+    width: 65%;
+}
+
+.nim{display: none;}
+
+.numero_img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.numero_content{
+    padding: 50px;
+    width: 35%;
+}
+
+.test{
+    margin-top: 100px;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+}
+
+.test_img{
+    height: 100%;
+    width: 65%;
+}
+.test_img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.test_content{
+    padding: 50px;
+    width: 35%;
+}
+
+
+.tris, .x2048{
+    margin-top: 100px;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+}
+
+.tris_img, .x2048_img{
+    height: 100%;
+    width: 65%;
+}
+
+.tim, .m2048{display: none;}
+
+.tris_img img, .x2048_img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.tris_content, .x2048_content{
+    padding: 50px;
+    width: 35%;
+}
+
+.find{
+    margin-top: 100px;
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    align-items: center;
+}
+
+.find_img{
+    height: 100%;
+    width: 65%;
+}
+.find_img img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.find_content{
+    padding: 50px;
+    width: 35%;
+}
+
+
+.scroll .header{
+    display: flex ;
+    justify-content: flex-start;
+    height: 10vh;
+}
+
+.scroll .btnn{
+    display: none;
+}
+
+.scroll .logo{
+    margin-left: 30px;
+    width: 150px;
+    height: 50px;
+}
+
+.mediaExodia{
+    display: none;
+}
+
+
+@media(max-width: 768px) {
+    .header{
+        position: fixed;
+        max-width: 100vw;
+        height: 20vh;
+        margin-top: -16vh;
+
+    }
+    .scroll .header {
+        display: flex;
+        justify-content: flex-start;
+        height: 8vh;
+        min-height: 8vh;
+        max-width: 100vw;
+    }
+    .home{
+        height: 100vh;
+        max-width: 100vw;
+        background-size: cover;
+        margin-top: 16vh;
+    }
+
+    .logo{
+        width: 150px;
+        height: 50px;
+        margin-top: 25px;
+        margin-bottom: 0;
+    }
+    .scroll .logo{
+        width: 75px;
+        height: 25px;
+        margin-top: 5px;
+        margin-bottom: 0;
+    }
+    .btnn{font-size: 18px; }
+
+    .orologio{
+        display: none;
+    }
+
+    h1{padding: 0 10px;}
+
+    .cartaforbice, .numero, .test, .tris{
+        display: grid;
+        flex-wrap: wrap;
+        height: auto;
+        flex-direction: column;
+    }
+
+    .cfs_img img, .numero_img img, .test_img img, .tris_img img{width: 100vw;}
+    .cfs_content, .numero_content, .test_content, .tris_content{width: 100vw; padding: 0;}
+    .ni{display: none;}
+    .nim{display: block;}
+    .ti{display: none;}
+    .tim{display: block;}
+
+    .big-text{font-size: 30px;}
+    .btn{font-size: 15px;}
+}
